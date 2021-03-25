@@ -38,6 +38,7 @@
             <div class="col-md-8">
               <input class="form-control"
                      [ngClass]="{'is-invalid': (passwordVar.touched || passwordVar.dirty) && !passwordVar.valid }"
+                     [type]="maskUserPassword ? 'password' : 'text'"
                      id="passwordId"
                      type="password"
                      placeholder="Password (required)"
