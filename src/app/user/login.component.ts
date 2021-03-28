@@ -12,7 +12,6 @@ import { Store } from '@ngrx/store';
 export class LoginComponent implements OnInit {
   pageTitle = 'Log In';
 
-  maskUserName: boolean;
   maskUserPassword: boolean;
 
   constructor(
@@ -26,7 +25,6 @@ export class LoginComponent implements OnInit {
     this.store.select('users').subscribe(
       users => {
         if (users) {
-          this.maskUserName = users.maskUserName;
           this.maskUserPassword = users.maskUserPassword;
         }
       },
