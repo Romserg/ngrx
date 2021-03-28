@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import { Store } from '@ngrx/store';
 import { getMaskUserPassword } from './state/user.reducer';
+import { State } from '../state/app.state';
 
 @Component({
   templateUrl: './login.component.html',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   maskUserPassword: boolean;
 
   constructor(
-    private store: Store<any>,
+    private store: Store<State>,
     private authService: AuthService,
     private router: Router,
   ) {
