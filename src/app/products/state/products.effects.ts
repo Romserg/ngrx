@@ -22,4 +22,14 @@ export class ProductsEffects {
       )),
     );
   });
+
+  updateProducts$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ProductActions.updateProduct),
+      mergeMap((action) => this.productService.updateProduct(action.product).pipe(
+        map(product => ProductActions.updateProductSuccess({ product })),
+        catchError(error => of(ProductActions.updateProductFailure({ error }))),
+      )),
+    );
+  });
 }
